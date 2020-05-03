@@ -1,9 +1,15 @@
 package com.example.eatgo.interfaces;
 
-import org.junit.jupiter.api.Test;
+import com.example.eatgo.application.RestaurantService;
+import com.example.eatgo.domain.MenuItemRepository;
+import com.example.eatgo.domain.MenuItemRepositoryImpl;
+import com.example.eatgo.domain.RestaurantRepository;
+import com.example.eatgo.domain.RestaurantRepositoryImpl;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -18,6 +24,15 @@ public class RestaurantControllerTests {
 
     @Autowired
     private MockMvc mvc;
+
+    @SpyBean(RestaurantService.class)
+    private RestaurantService restaurantService;
+
+    @SpyBean(RestaurantRepositoryImpl.class)
+    private RestaurantRepository restaurantRepository;
+
+    @SpyBean(MenuItemRepositoryImpl.class)
+    private MenuItemRepository menuItemRepository;
 
     @Test
     public void list() throws Exception {
@@ -40,6 +55,9 @@ public class RestaurantControllerTests {
             ))
             .andExpect(content().string(
                     containsString("\"name\":\"Bob zip\"")
+            ))
+            .andExpect(content().string(
+                    containsString("Kimchi")
             ));
 
         mvc.perform(get("/restaurants/2020"))
