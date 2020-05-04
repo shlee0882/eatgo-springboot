@@ -20,6 +20,7 @@ build/
 *.iml
 *.ipr
 out/
+eatgo-web/node_modules
 
 ### NetBeans ###
 /nbproject/private/
