@@ -15,6 +15,7 @@ public class Restaurant {
     @Id
     @GeneratedValue
     private Long id;
+
     private String name;
     private String address;
 
@@ -39,7 +40,7 @@ public class Restaurant {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -67,5 +68,14 @@ public class Restaurant {
         for(MenuItem menuItem : menuItems){
             addMenuItem(menuItem);
         }
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void updateInformation(String name, String address) {
+        this.name = name;
+        this.address = address;
     }
 }
