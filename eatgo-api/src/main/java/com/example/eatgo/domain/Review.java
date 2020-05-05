@@ -1,30 +1,26 @@
 package com.example.eatgo.domain;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.IdClass;
 
 @Entity
-@Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MenuItem {
+public class Review {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    private Long restaurantId;
-
     private String name;
 
-    @Transient
-    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-    private boolean destroy;
+    private Integer score;
+    private String description;
 }
