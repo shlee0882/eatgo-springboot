@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 
-public class RestaurantServiceTest {
+public class RestaurantServiceTests {
 
     private RestaurantService restaurantService;
 
