@@ -51,32 +51,46 @@
     - rest api를 구성하는 controller에 선언해준다.
 
 - @PathVariable
+    - 경로에 path변수를 넣어준다.
 
 - @RequestBody
-
+    - HTTP 요청의 body 내용을 자바 객체로 매핑하는 역할을 한다.
+    
 - @ResponseBody
-
+    - 자바 객체를 HTTP 요청의 body 내용으로 매핑하는 역할을 한다.
+   
 - @ResponseStatus(HttpStatus.NOT_FOUND)
+    - 응답상태를 반환한다.
 
 - @ExceptionHandler(RestaurantNotFoundException.class)
-     
+    - exception 발생시 error를 핸들해 준다.
+    
 - @GetMapping("/restaurants/{id}")
-
+    - 해당경로의 id값을 받은 url GET 요청을 받는다.
+     
 - @PostMapping("/restaurants")
+    - 해당경로 url POST 요청을 받는다.
 
 - @PatchMapping("/restaurants/{id}")
+    - 해당경로 url POST 요청을 받는다.
 
 - @Mock
+    - mock객체를 선언 생성한다.
 
 - @Before
-
+    - test어노테이션 전에 미리 실행해준다. 사전 setup으로 사용된다.
+    
 - @Test
+    - test 실행 어노테이션이다.
 
 - @RunWith(SpringRunner.class)
-
+    - controller test에서 사용된다.
+    
 - @WebMvcTest(MenuItemController.class)
-
+    - 사용할 컨트롤러 클래스를 명시해주고 사용한다. 
+    
 - @MockBean
+    - 선언할 테스트 서비스명에 사용한다.
 
 ### 프로젝트 구조
 - application layer 
