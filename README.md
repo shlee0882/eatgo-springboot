@@ -108,11 +108,12 @@
  ```java
 http GET localhot:8080/restaurants
 http GET localhot:8080/restaurants/1
-http POST localhot:8080/restaurants name="Bob Zip" address=Seoul
 ```
 
 * CREATE
 ```java
+http POST localhot:8080/restaurants name="Bob Zip" address=Seoul
+http POST localhost:8080/restaurants/1/reviews name="sanghyun" score="3" description="good"
 http PATCH localhost:8080/restaurants/1/menuitems < menuitems.json
 ```
 
@@ -120,6 +121,8 @@ http PATCH localhost:8080/restaurants/1/menuitems < menuitems.json
 ```java
 http PATCH localhost:8080/restaurants/1/menuitems < menuitems2.json
 ```
+
+
 
 ### TODO
 
