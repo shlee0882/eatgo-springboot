@@ -15,12 +15,12 @@ public class ReviewServiceTests {
     private ReviewService reviewService;
 
     @Mock
-    private ReviewRepository reviewRepotory;
+    private ReviewRepository reviewRepository;
 
     @Before
     public void setUp(){
         MockitoAnnotations.initMocks(this);
-        reviewService = new ReviewService(reviewRepotory);
+        reviewService = new ReviewService(reviewRepository);
     }
 
     @Test
@@ -30,8 +30,7 @@ public class ReviewServiceTests {
                 .score(3)
                 .description("good")
                 .build();
-        reviewService.addReview(review);
-
-        verify(reviewRepotory).save(any());
+        reviewService.addReview(1004L, review);
+        verify(reviewRepository).save(any());
     }
 }
