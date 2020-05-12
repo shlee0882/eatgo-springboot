@@ -108,6 +108,10 @@
  ```java
 http GET localhot:8080/restaurants
 http GET localhot:8080/restaurants/1
+http GET localhost:8080/region
+http GET localhost:8080/category
+http GET "localhost:8080/restaurants?region=서울&category=1"
+http GET localhost:8080/users
 ```
 
 * CREATE
@@ -115,11 +119,15 @@ http GET localhot:8080/restaurants/1
 http POST localhot:8080/restaurants name="Bob Zip" address=Seoul
 http POST localhost:8080/restaurants/1/reviews name="sanghyun" score="3" description="good"
 http PATCH localhost:8080/restaurants/1/menuitems < menuitems.json
+http POST localhost:8080/restaurants/1/reviews name="sanghyun" score="3" description="good"
+http POST localhost:8080/uesrs email=tester@example.com name=Tester
 ```
 
 * UPDATE / DELETE
 ```java
 http PATCH localhost:8080/restaurants/1/menuitems < menuitems2.json
+http PATCH localhost:8080/users/97 email=tester@example.com name=Tester level=100
+http DELETE localhost:8080/users/97
 ```
 
 
