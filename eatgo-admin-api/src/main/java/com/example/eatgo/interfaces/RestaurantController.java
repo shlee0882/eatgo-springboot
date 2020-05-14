@@ -42,6 +42,7 @@ public class RestaurantController {
                 Restaurant.builder()
                         .name(resource.getName())
                         .address(resource.getAddress())
+                        .categoryId(resource.getCategoryId())
                         .build());
 
         URI location = new URI("/restaurants/" + restaurant.getId());

@@ -92,6 +92,12 @@
 - @MockBean
     - 선언할 테스트 서비스명에 사용한다.
 
+- @Configuration
+    - 환경 설정에 사용한다.
+    
+- @EnableWebSecurity
+    - 스프링시큐리티 적용 시 사용한다.
+
 ### 프로젝트 구조
 - application layer 
     - service 관리
@@ -106,33 +112,42 @@
 
 * READ
  ```java
-http GET localhot:8080/restaurants
-http GET localhot:8080/restaurants/1
-http GET localhost:8080/region
-http GET localhost:8080/category
-http GET "localhost:8080/restaurants?region=서울&category=1"
+
+User 
 http GET localhost:8080/users
-```
-
-* CREATE
-```java
-http POST localhot:8080/restaurants name="Bob Zip" address=Seoul
-http POST localhost:8080/restaurants/1/reviews name="sanghyun" score="3" description="good"
-http PATCH localhost:8080/restaurants/1/menuitems < menuitems.json
-http POST localhost:8080/restaurants/1/reviews name="sanghyun" score="3" description="good"
 http POST localhost:8080/uesrs email=tester@example.com name=Tester
-```
+http DELETE localhost:8080/users/{id}
+http PATCH localhost:8080/users/{id} name="" eamil="" level=1
 
-* UPDATE / DELETE
-```java
-http PATCH localhost:8080/restaurants/1/menuitems < menuitems2.json
-http PATCH localhost:8080/users/97 email=tester@example.com name=Tester level=100
-http DELETE localhost:8080/users/97
-```
+Restaurant
+http GET localhot:8080/restaurants
+http GET localhot:8080/restaurants/{id}
+http POST localhot:8080/restaurants name="" address="" categoryId=1
+http PATCH localhot:8080/restaurants/{id} name="" address="" 
 
+Region
+http GET localhost:8080/regions
+http POST localhost:8080/regions name=seoul
+
+MenuItem
+http GET localhost:8080//restaurants/{restaurantId}/menuitems
+http PATCH localhost:8080/restaurants/{restaurantId}/menuitems < menuitems.json
+http PATCH localhost:8080/restaurants/{restaurantId}/menuitems < menuitems2.json
+
+Category
+http GET localhost:8080/categories
+http POST localhost:8080/categories name="korean food"
+
+Review
+http GET localhost:8080/reviews
+http POST localhost:8080/restaurants/{restaurantId}/reviewsname="sanghyun" score="3" description="good"
+
+
+```
 
 
 ### TODO
 
 - 현재 backend에서 menuitems.json파일을 사용하여 crud만 했는데  
   front에서 json형식의 데이터를 주고받을수 있게 CRUD 처리하기 
+  

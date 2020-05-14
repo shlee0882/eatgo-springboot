@@ -5,9 +5,9 @@ spring:
     hibernate:
       ddl-auto: update
 
-#---
-#
-#spring:
-#  profiles: test
-#  datasource:
-#    url: jdbc:h2:mem:test
+---
+
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:h2:mem:test
