@@ -6,7 +6,6 @@ spring:
       ddl-auto: update
 
 ---
-
 spring:
   profiles: test
   datasource:
