@@ -108,6 +108,12 @@
 - interfaces layer 
     - controller 관리
 
+- SecurityJavaConfig
+    - 스프링 시큐리티 설정파일
+    
+- EmailExistedException
+    - 이메일 기등록 파악 exception
+    
 ### api 사용법
 
 * READ
@@ -115,7 +121,7 @@
 
 User 
 http GET localhost:8080/users
-http POST localhost:8080/uesrs email=tester@example.com name=Tester
+http POST localhost:8080/uesrs email=tester@example.com name=Tester password="tester"
 http DELETE localhost:8080/users/{id}
 http PATCH localhost:8080/users/{id} name="" eamil="" level=1
 
@@ -145,6 +151,11 @@ http POST localhost:8080/restaurants/{restaurantId}/reviewsname="sanghyun" score
 
 ```
 
+### h2 db 접속
+
+```
+http://localhost:8080/h2-console/
+```
 
 ### TODO
 
