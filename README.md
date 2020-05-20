@@ -114,6 +114,14 @@
 - EmailExistedException
     - 이메일 기등록 파악 exception
     
+- JSON Web Tokens
+    - 적절한 토큰 생성 가능
+    - Header
+    - Payload(Claims) 정보를 담음
+    - Signature 서명데이터 검증
+    - Base64 URL Encoding
+    
+    
 ### api 사용법
 
 * READ
@@ -148,6 +156,8 @@ Review
 http GET localhost:8080/reviews
 http POST localhost:8080/restaurants/{restaurantId}/reviewsname="sanghyun" score="3" description="good"
 
+Session
+http POST localhost:8080/session email="shlee0882@gmail.com" password="sanghyun"
 
 ```
 
@@ -155,6 +165,12 @@ http POST localhost:8080/restaurants/{restaurantId}/reviewsname="sanghyun" score
 
 ```
 http://localhost:8080/h2-console/
+```
+
+### JWT
+
+```
+https://jwt.io/
 ```
 
 ### TODO
