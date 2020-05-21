@@ -155,6 +155,7 @@ http POST localhost:8080/categories name="korean food"
 Review
 http GET localhost:8080/reviews
 http POST localhost:8080/restaurants/{restaurantId}/reviewsname="sanghyun" score="3" description="good"
+http POST localhost:8080/restaurants/68/reviews score=3 description="좋아요" "Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEwMDQsIm5hbWUiOiJKb2huIn0.8hm6ZOJykSINHxL-rf0yV882fApL3hyQ9-WGlJUyo2A"
 
 Session
 http POST localhost:8080/session email="shlee0882@gmail.com" password="sanghyun"
