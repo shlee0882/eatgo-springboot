@@ -44,13 +44,4 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User authenticate(String email, String password) {
-        User user = userRepository.findByEmail(email).orElseThrow(() ->new EmailNotExistedException(email));
-
-        if( !passwordEncoder.matches(password, user.getPassword()) ){
-            throw new PasswordWrongException();
-        }
-
-        return user;
-    }
 }
