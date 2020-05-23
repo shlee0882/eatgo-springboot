@@ -160,6 +160,10 @@ http POST localhost:8080/restaurants/68/reviews score=3 description="좋아요" 
 Session
 http POST localhost:8080/session email="shlee0882@gmail.com" password="sanghyun"
 
+Reservation
+http GET localhost:8080/reservations "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE2MiwibmFtZSI6IuqwgOqyjOyjvOyduCIsInJlc3RhdXJhbnRJZCI6MX0.91Z5lu9uIy29urhgEKxmKh7laeuEFEkMo88AOOSuRns"
+http POST localhost:8080/restaurants/1/reservations date="2020-12-24" time="23:00" partySize=4 "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE2MSwibmFtZSI6InRlc3RlciJ9.n9A2wAduxEsiNP3Op5q5KcTzuiVts-GZcIKwq-3btn8"
+
 ```
 
 ### h2 db 접속
@@ -179,3 +183,6 @@ https://jwt.io/
 - 현재 backend에서 menuitems.json파일을 사용하여 crud만 했는데  
   front에서 json형식의 데이터를 주고받을수 있게 CRUD 처리하기 
   
+- 각 api마다 추가로 필요한 정보가 있다면 넣어주기
+
+- junit으로 토큰값 생성 및 테스트
