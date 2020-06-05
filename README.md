@@ -1,5 +1,6 @@
 # eatgo api 만들기
 
+[![Build Status](https://travis-ci.org/shlee0882/eatgo-springboot.svg?branch=master)](https://travis-ci.org/shlee0882/eatgo-springboot)
 
 ### 용어 정리
 
